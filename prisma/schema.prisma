@@ -8,7 +8,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Gauchinha{
+model Restaurant{
   id String @id @default(uuid())
   name String
   slug String
@@ -17,15 +17,15 @@ model Gauchinha{
   coverImageUrl String
   createdAt DateTime @default(now())
   upadatedAT DateTime @updatedAt
-  menuCategories MenuCat[]
+  menuCategories MenuCategory[]
   products Product[]
   orders Order[]
 }
 
-model MenuCat{
+model MenuCategory{
   id String @id @default(uuid())
   name String
-  restaurant Gauchinha @relation(fields:[restaurantId] , references: [id])
+  restaurant Restaurant @relation(fields:[restaurantId] , references: [id], onDelete: Cascade)
   restaurantId String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt 
@@ -39,10 +39,10 @@ model Product{
   price Float
   imageUrl String
   ingredients String[]
-  restaurant Gauchinha @relation(fields:[restaurantId] , references: [id])
-  menuCategory MenuCat @relation(fields:[menuCatId] , references: [id])
+  restaurant Restaurant @relation(fields:[restaurantId] , references: [id], onDelete: Cascade)
+  menuCategory MenuCategory @relation(fields:[menuCategoryId] , references: [id], onDelete: Cascade)
   restaurantId String
-  menuCatId String
+  menuCategoryId String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   orderProducts OrderProducts[]
@@ -54,16 +54,18 @@ model Order{
   status OrderStatus
   orderProducts OrderProducts[]
   restaurantId String
-  restaurant Gauchinha @relation(fields:[restaurantId] , references: [id])
+  restaurant Restaurant @relation(fields:[restaurantId] , references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
 
 }
 
 model OrderProducts{
   id String @id @default(uuid())
-  product Product @relation(fields:[productId] , references: [id])
+  product Product @relation(fields:[productId] , references: [id], onDelete: Cascade)
   productId String
-  order Order @relation(fields:[orderId] , references: [id])
+  order Order @relation(fields:[orderId] , references: [id], onDelete: Cascade)
   orderId Int
   quantity Int
   price Float
