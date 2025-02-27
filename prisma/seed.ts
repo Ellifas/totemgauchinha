@@ -9,9 +9,9 @@ const main = async () => {
     await tx.restaurant.deleteMany();
     const restaurant = await tx.restaurant.create({
       data: {
-        name: "FSW Donalds",
-        slug: "fsw-donalds",
-        description: "O melhor fast food do mundo",
+        name: "Gauchinha",
+        slug: "galeteria-gauchinha",
+        description: "O melhor galeto da cidade",
         avatarImageUrl:
           "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQvcNP9rHlEJu1vCY5kLqzjf29HKaeN78Z6pRy",
         coverImageUrl:
@@ -20,109 +20,104 @@ const main = async () => {
     });
     const combosCategory = await tx.menuCategory.create({
       data: {
-        name: "Combos",
+        name: "Quentinhas",
         restaurantId: restaurant.id,
       },
     });
     await tx.product.createMany({
       data: [
         {
-          name: "McOferta Média Big Mac Duplo",
+          name: "Quenetinha com frango",
           description:
-            "Quatro hambúrgueres (100% carne bovina), alface americana, queijo fatiado sabor cheddar, molho especial, cebola, picles e pão com gergilim, acompanhamento e bebida.",
-          price: 39.9,
+            "Acompanha arroz, feijão e salada. Frango assado com batatas.",
+          price: 20.0,
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQaHB8tslkBUjlHSKiuseLm2hIFzVY0OtxEPnw",
           menuCategoryId: combosCategory.id,
           restaurantId: restaurant.id,
           ingredients: [
-            "Pão com gergilim",
-            "Hambúrguer de carne 100% bovina",
-            "Alface americana",
-            "Queijo fatiado sabor cheddar",
-            "Molho especial",
-            "Cebola",
-            "Picles",
+            "Arroz branco, A grega, Refogado",
+            "Feijão verde, Feijão preto, Feijão carioca, Fava(verificar disponibilidade)", 
+            "Salada de repolho, Vinagrete, Maionese",
+            "Deseja por paçoca? (farofa de carne)",
+            "Purê de macaxeira, Purê de batata",
+            "Macaxeira, Batata doce, Banana a milanesa",
+            "Farofa dágua (Bolão)",
           ],
         },
         {
-          name: "Novo Brabo Melt Onion Rings",
+          name: "Quentinha com carne",
           description:
-            "Dois hambúrgueres de carne 100% bovina, méquinese, a exclusiva maionese especial com sabor de carne defumada, onion rings, fatias de bacon, queijo processado sabor cheddar, o delicioso molho lácteo com queijo tipo cheddar tudo isso no pão tipo brioche trazendo uma explosão de sabores pros seus dias de glória! Acompanhamento e Bebida.",
+            "Acompanha arroz, feijão e salada e Carne.",
           price: 41.5,
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQeGQofnEPyQaHEV2WL8rGUs41oMICtYfNkphl",
           menuCategoryId: combosCategory.id,
           restaurantId: restaurant.id,
           ingredients: [
-            "Pão tipo brioche",
-            "Hambúrguer de carne 100% bovina",
-            "Méquinese",
-            "Maionese especial com sabor de carne defumada",
-            "Onion rings",
-            "Fatias de bacon",
-            "Queijo processado sabor cheddar",
-            "Molho lácteo com queijo tipo cheddar",
+            "Arroz branco, A grega, Refogado",
+            "Feijão verde, Feijão preto, Feijão carioca, Fava(verificar disponibilidade)", 
+            "Salada de repolho, Vinagrete, Maionese",
+            "Deseja por paçoca? (farofa de carne)",
+            "Purê de macaxeira, Purê de batata",
+            "Macaxeira, Batata doce, Banana a milanesa",
+            "Farofa dágua (Bolão)",
           ],
         },
         {
-          name: "McCrispy Chicken Elite",
+          name: "Quentinha Mista",
           description:
-            "Composto por pão tipo brioche com batata, molho Honey&Fire, bacon em fatias, alface, tomate, queijo sabor cheddar e carne 100% de peito de frango, temperada e empanada, acompanhamento e bebida.",
+            "Acompanha arroz, feijão e salada. Carne e frango.",
           price: 39.9,
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQr12aTqPo3SsGjBJCaM7yhxnbDlXeL5N9dckv",
           menuCategoryId: combosCategory.id,
           restaurantId: restaurant.id,
           ingredients: [
-            "Pão tipo brioche",
-            "Batata",
-            "Molho Honey&Fire",
-            "Bacon em fatias",
-            "Alface",
-            "Tomate",
-            "Queijo sabor cheddar",
-            "Carne 100% de peito de frango",
+            "Arroz branco, A grega, Refogado",
+            "Feijão verde, Feijão preto, Feijão carioca, Fava(verificar disponibilidade)", 
+            "Salada de repolho, Vinagrete, Maionese",
+            "Deseja por paçoca? (farofa de carne)",
+            "Purê de macaxeira, Purê de batata",
+            "Macaxeira, Batata doce, Banana a milanesa",
+            "Farofa dágua (Bolão)",
           ],
         },
         {
-          name: "Duplo Cheddar McMelt",
+          name: "Quentinha com galinha matriz",
           description:
-            "Dois hambúrgueres (100% carne bovina), molho lácteo com queijo tipo cheddar, cebola ao molho shoyu e pão escuro com gergelim, acompanhamento e bebida.",
+            "Acompanha arroz, feijão e salada. Galinha matriz.",
           price: 36.2,
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQWdq0w8niS9XCLQu7Nb4jvBYZze16goaOqsKR",
           menuCategoryId: combosCategory.id,
           restaurantId: restaurant.id,
           ingredients: [
-            "Pão escuro com gergelim",
-            "Hambúrguer de carne 100% bovina",
-            "Molho lácteo com queijo tipo cheddar",
-            "Cebola ao molho shoyu",
+            "Arroz branco, A grega, Refogado",
+            "Feijão verde, Feijão preto, Feijão carioca, Fava(verificar disponibilidade)", 
+            "Salada de repolho, Vinagrete, Maionese",
+            "Deseja por paçoca? (farofa de carne)",
+            "Purê de macaxeira, Purê de batata",
+            "Macaxeira, Batata doce, Banana a milanesa",
+            "Farofa dágua (Bolão)",
           ],
         },
       ],
     });
     const hamburguersCategory = await tx.menuCategory.create({
       data: {
-        name: "Lanches",
+        name: "Items Separados",
         restaurantId: restaurant.id,
       },
     });
     await tx.product.createMany({
       data: [
         {
-          name: "Big Mac",
+          name: "Galeto Inteiro",
           description:
-            "Quatro hambúrgueres (100% carne bovina), alface americana, queijo fatiado sabor cheddar, molho especial, cebola, picles e pão com gergilim, acompanhamento e bebida.",
+            "Acompanha farofa",
           ingredients: [
-            "Pão com gergilim",
-            "Hambúrguer de carne 100% bovina",
-            "Alface americana",
-            "Queijo fatiado sabor cheddar",
-            "Molho especial",
-            "Cebola",
-            "Picles",
+            "Galeto inteiro",
           ],
           price: 39.9,
           imageUrl:
@@ -131,18 +126,11 @@ const main = async () => {
           restaurantId: restaurant.id,
         },
         {
-          name: "Duplo Quarterão",
+          name: "Carne de sol",
           description:
-            "Dois hambúrgueres de carne 100% bovina, méquinese, a exclusiva maionese especial com sabor de carne defumada, onion rings, fatias de bacon, queijo processado sabor cheddar, o delicioso molho lácteo com queijo tipo cheddar tudo isso no pão tipo brioche trazendo uma explosão de sabores pros seus dias de glória! Acompanhamento e Bebida.",
+            "Acompanha farofa, 1kg de carne antes de ser assado",
           ingredients: [
-            "Pão tipo brioche",
-            "Hambúrguer de carne 100% bovina",
-            "Méquinese",
-            "Maionese especial com sabor de carne defumada",
-            "Onion rings",
-            "Fatias de bacon",
-            "Queijo processado sabor cheddar",
-            "Molho lácteo com queijo tipo cheddar",
+            "Carne de sol",
           ],
           price: 41.5,
           imageUrl:
@@ -151,18 +139,11 @@ const main = async () => {
           restaurantId: restaurant.id,
         },
         {
-          name: "McMelt",
+          name: "Picanha",
           description:
-            "Composto por pão tipo brioche com batata, molho Honey&Fire, bacon em fatias, alface, tomate, queijo sabor cheddar e carne 100% de peito de frango, temperada e empanada, acompanhamento e bebida.",
+            "Acompanha farofa, 1kg de picanha antes de ir para a churrasqueira",
           ingredients: [
-            "Pão tipo brioche",
-            "Batata",
-            "Molho Honey&Fire",
-            "Bacon em fatias",
-            "Alface",
-            "Tomate",
-            "Queijo sabor cheddar",
-            "Carne 100% de peito de frango",
+            "Picanha", 
           ],
           price: 39.9,
           imageUrl:
@@ -171,18 +152,80 @@ const main = async () => {
           restaurantId: restaurant.id,
         },
         {
-          name: "McNífico Bacon",
+          name: "Bode assado",
           description:
-            "Dois hambúrgueres (100% carne bovina), molho lácteo com queijo tipo cheddar, cebola ao molho shoyu e pão escuro com gergelim, acompanhamento e bebida.",
+            "Acompanha farofa, 1kg de bode antes de ir para a churrasqueira",
           ingredients: [
-            "Pão escuro com gergelim",
-            "Hambúrguer de carne 100% bovina",
-            "Molho lácteo com queijo tipo cheddar",
-            "Cebola ao molho shoyu",
+            "Bode assado",
           ],
           price: 36.2,
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQBBmifbjzEVXRoycAtrP9vH45bZ6WDl3QF0a1",
+          menuCategoryId: hamburguersCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Porco assado",
+          description:
+            "Acompanha farofa, 1kg de carde de porco antes de ir para a churrasqueira",
+          ingredients: [
+            "Carne de porco",
+          ],
+          price: 36.2,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ3i1b33q29eEsh0CVmOywrqx1UPnJpRGcHN5v",
+          menuCategoryId: hamburguersCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Unidade de linguiça",
+          description:
+            "Acompanha farofa, 1 unidade de linguiça (escolha na churrasqueira)",
+          ingredients: [
+            "Linguiça",
+          ],
+          price: 36.2,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7toOZxYa1oARJCUGh4EY3x8NjXHtvZ7lnVfw",
+          menuCategoryId: hamburguersCategory.id,
+          restaurantId: restaurant.id,  
+        },
+        {
+          name: "Asa de frango",
+          description:
+            "Acompanha farofa, 1 unidade de asa de frango",
+          ingredients: [
+            "asa de frango",
+          ],
+          price: 36.2,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ5toOZxYa1oARJCUGh4EY3x8NjXHtvZ7lnVfw",
+          menuCategoryId: hamburguersCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Coração de frango",
+          description:
+            "Acompanha farofa, 1 espeto de coração de frango",
+          ingredients: [
+            "Coração de frango",
+          ],
+          price: 36.2,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ5toOZxYa1oARJCUGh4EY3x8NjXHtvZ7lnVfw",
+          menuCategoryId: hamburguersCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Tilápia desossada",
+          description:
+            "Acompanha farofa, 1kg de tilápia desossada",
+          ingredients: [
+            "Tilápia",
+          ],
+          price: 36.2,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ5toOZxYa1oARJCUGh4EY3x8NjXHtvZ7lnVfw",
           menuCategoryId: hamburguersCategory.id,
           restaurantId: restaurant.id,
         },
@@ -217,17 +260,6 @@ const main = async () => {
           menuCategoryId: frenchFriesCategory.id,
           restaurantId: restaurant.id,
         },
-        {
-          name: "Fritas Pequena",
-          description:
-            "Batatas fritas crocantes e sequinhas. Vem pouquinho (é bom pra sua dieta)!",
-          ingredients: [],
-          price: 5.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ5toOZxYa1oARJCUGh4EY3x8NjXHtvZ7lnVfw",
-          menuCategoryId: frenchFriesCategory.id,
-          restaurantId: restaurant.id,
-        },
       ],
     });
     const drinksCategory = await tx.menuCategory.create({
@@ -239,7 +271,7 @@ const main = async () => {
     await tx.product.createMany({
       data: [
         {
-          name: "Coca-cola",
+          name: "Coca-cola lata",
           description: "Coca-cola gelada para acompanhar seu lanche.",
           ingredients: [],
           price: 5.9,
@@ -249,8 +281,8 @@ const main = async () => {
           restaurantId: restaurant.id,
         },
         {
-          name: "Fanta Laranja",
-          description: "Fanta Laranja gelada para acompanhar seu lanche.",
+          name: "Coca-cola litro",
+          description: "Coca-cola litro gelada para acompanhar seu lanche.",
           ingredients: [],
           price: 5.9,
           imageUrl:
@@ -259,8 +291,68 @@ const main = async () => {
           restaurantId: restaurant.id,
         },
         {
-          name: "Água Mineral",
-          description: "A bebida favorita do Cristiano Ronaldo.",
+          name: "Coca-cola 2 litros",
+          description: "Coca-cola 2 litros gelada para acompanhar seu lanche.",
+          ingredients: [],
+          price: 2.9,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7i05S5tkc0L9oMIXZsFJtwnBh2KCz3y6uSW1",
+          menuCategoryId: drinksCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Guaraná Lata",
+          description: "Guaraná em lata gelada para acompanhar seu lanche.",
+          ingredients: [],
+          price: 2.9,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7i05S5tkc0L9oMIXZsFJtwnBh2KCz3y6uSW1",
+          menuCategoryId: drinksCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Guaraná 1 litro",
+          description: "Guaraná de 1 litro gelada para acompanhar seu lanche.",
+          ingredients: [],
+          price: 2.9,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7i05S5tkc0L9oMIXZsFJtwnBh2KCz3y6uSW1",
+          menuCategoryId: drinksCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Guaraná 2 litros",
+          description: "Guaraná 2 litros gelada para acompanhar seu lanche.",
+          ingredients: [],
+          price: 2.9,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7i05S5tkc0L9oMIXZsFJtwnBh2KCz3y6uSW1",
+          menuCategoryId: drinksCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Cerveja",
+          description: "Verificar qual está disponível no balcão",
+          ingredients: [],
+          price: 2.9,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7i05S5tkc0L9oMIXZsFJtwnBh2KCz3y6uSW1",
+          menuCategoryId: drinksCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Agua mineral",
+          description: "Cr7 mandou comprar essa!",
+          ingredients: [],
+          price: 2.9,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7i05S5tkc0L9oMIXZsFJtwnBh2KCz3y6uSW1",
+          menuCategoryId: drinksCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Agua com gás",
+          description: "Só agua, com gás",
           ingredients: [],
           price: 2.9,
           imageUrl:
@@ -279,8 +371,8 @@ const main = async () => {
     await tx.product.createMany({
       data: [
         {
-          name: "Casquinha de Baunilha",
-          description: "Casquinha de sorvete sabor baunilha.",
+          name: "Potinho de doce",
+          description: "Doces variados! Escolha no balcão",
           ingredients: [],
           price: 3.9,
           imageUrl:
@@ -289,8 +381,8 @@ const main = async () => {
           restaurantId: restaurant.id,
         },
         {
-          name: "Casquinha de Chocolate",
-          description: "Casquinha de sorvete sabor chocolate.",
+          name: "Pote de doce grande",
+          description: "Doces variados!! Escolha no balcão",
           ingredients: [],
           price: 3.9,
           imageUrl:
@@ -299,8 +391,38 @@ const main = async () => {
           restaurantId: restaurant.id,
         },
         {
-          name: "Casquinha de Mista",
-          description: "Casquinha de sorvete sabor baunilha e chocolate.",
+          name: "Cocada",
+          description: "Cocadas variadas! Escolha no balcão",
+          ingredients: [],
+          price: 2.9,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ4rBrtULypXmR6JiWuhzS8ALjVkrF3yfatC7E",
+          menuCategoryId: desertsCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Doce cristalizado",
+          description: "Cocadas variadas! Escolha no balcão",
+          ingredients: [],
+          price: 2.9,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ4rBrtULypXmR6JiWuhzS8ALjVkrF3yfatC7E",
+          menuCategoryId: desertsCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Picolé",
+          description: "Verificar disponibilidade no freezer",
+          ingredients: [],
+          price: 2.9,
+          imageUrl:
+            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ4rBrtULypXmR6JiWuhzS8ALjVkrF3yfatC7E",
+          menuCategoryId: desertsCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Pote de 1 litro de sorvete",
+          description: "Escolha o seu no freezer!",
           ingredients: [],
           price: 2.9,
           imageUrl:
